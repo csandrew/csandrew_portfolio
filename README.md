@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my work as a developer and des
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://your-netlify-url.netlify.app)
+[View Live Portfolio](https://andrewchemiati.netlify.app/)
 
 ## ✨ Features
 
