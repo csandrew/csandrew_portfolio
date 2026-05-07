@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+  /*--primary-color:#381956 ;
+  --accent-color: #c285c1;
+  --secondary-color: #974ba8;
+  --light-color: #b19fb6;
+  --dark-color: #2c3e50;
+  --text-color: #333;*/
+
+  --primary-color: #2c3e50;
+  --accent-color: #c285c1;
+  --secondary-color: #974ba8;
+  --white-color: #ffffff;
+  --light-color: #b19fb6;
+  --dark-color: #381956;
+  --text-color: #333;
+}
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+  
+    /* Custom color utility classes */
+    .bg-primary { background-color: var(--primary-color) !important; }
+    .bg-secondary { background-color: var(--secondary-color) !important; }
+    .bg-accent { background-color: var(--accent-color) !important; }
+    .bg-light { background-color: var(--light-color) !important; }
+    .bg-dark { background-color: var(--dark-color) !important; }
+    .bg-white { background-color: var(--white-color) !important; }
+    .text-primary { color: var(--primary-color) !important; }
+    .text-secondary { color: var(--secondary-color) !important; }
+    .text-accent { color: var(--accent-color) !important; }
+    .text-light { color: var(--light-color) !important; }
+    .text-dark { color: var(--dark-color) !important; }
+    .text-main { color: var(--text-color) !important; }
+    .border-primary { border-color: var(--primary-color) !important; }
+    .border-secondary { border-color: var(--secondary-color) !important; }
+    .border-accent { border-color: var(--accent-color) !important; }
+    .border-light { border-color: var(--light-color) !important; }
+    .border-dark { border-color: var(--dark-color) !important; }
+    .hover\:bg-primary:hover { background-color: var(--primary-color) !important; }
+    .hover\:bg-accent:hover { background-color: var(--accent-color) !important; }
+    .hover\:bg-secondary:hover { background-color: var(--secondary-color) !important; }
+    .hover\:bg-light:hover { background-color: var(--light-color) !important; }
+    .hover\:bg-dark:hover { background-color: var(--dark-color) !important; }
+    .hover\:text-primary:hover { color: var(--primary-color) !important; }  
+    .hover\:text-accent:hover { color: var(--accent-color) !important; }
+    .hover\:text-secondary:hover { color: var(--secondary-color) !important; }
+    .hover\:text-light:hover { color: var(--light-color) !important; }
+    .hover\:text-dark:hover { color: var(--dark-color) !important; }
+    .hover\:text-white:hover { color: var(--white-color) !important; }
+  
+  body {
+    font-family: 'Roboto', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
