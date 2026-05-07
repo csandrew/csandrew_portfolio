@@ -2,13 +2,7 @@
 
 @layer base {
   :root {
-  /*--primary-color:#381956 ;
-  --accent-color: #c285c1;
-  --secondary-color: #974ba8;
-  --light-color: #b19fb6;
-  --dark-color: #2c3e50;
-  --text-color: #333;*/
-
+  
   --primary-color: #2c3e50;
   --accent-color: #c285c1;
   --secondary-color: #974ba8;
@@ -17,6 +11,26 @@
   --dark-color: #381956;
   --text-color: #333;
 }
+
+/* Smooth mobile menu transition */
+.absolute {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Add fade animation for backdrop */
+.fixed {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 
   html {
     scroll-behavior: smooth;
