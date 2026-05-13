@@ -19,7 +19,7 @@ A modern, responsive portfolio website showcasing my work as a developer and des
 - React.js
 - Tailwind CSS
 - Vite
-- Framer Motion (if used)
+
 
 ## 📁 Project Structure
 
