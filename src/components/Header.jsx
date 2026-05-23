@@ -17,7 +17,7 @@ const socialLinks = [
     iconClass: 'fab fa-instagram',
     label: 'Instagram',
   },
-];
+]; 
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -86,14 +86,13 @@ function Header() {
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-sm bg-dark text-light transition duration-300 transform hover:scale-110 hover:bg-primary hover:shadow-lg"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-dark text-light transition duration-300 transform hover:scale-110 hover:bg-primary hover:shadow-lg"
               aria-label={social.label}
             >
               <i className={social.iconClass}></i>
             </a>
           ))}
         </div>
-
         <ul className="hidden items-center gap-6 text-base font-semibold text-dark md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>

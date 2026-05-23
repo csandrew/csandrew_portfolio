@@ -13,7 +13,7 @@ function Hero() {
             View My Work
           </a>
           <a href="#contact" className="inline-flex items-center justify-center rounded-sm border border-accent px-8 py-3 text-sm font-semibold text-light transition hover:bg-primary">
-            Contact Me
+            Get in Touch
           </a>
         </div>
       </div>

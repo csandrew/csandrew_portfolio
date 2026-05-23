@@ -2,71 +2,69 @@
 
 @layer base {
   :root {
-  
-  --primary-color: #2c3e50;
-  --accent-color: #c285c1;
-  --secondary-color: #974ba8;
-  --white-color: #ffffff;
-  --light-color: #b19fb6;
-  --dark-color: #381956;
-  --text-color: #333;
-}
-
-/* Smooth mobile menu transition */
-.absolute {
-  transition: all 0.3s ease-in-out;
-}
-
-/* Optional: Add fade animation for backdrop */
-.fixed {
-  animation: fadeIn 0.2s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+    --primary-color: #2c3e50;
+    --accent-color: #c285c1;
+    --secondary-color: #974ba8;
+    --white-color: #ffffff;
+    --light-color: #b19fb6;
+    --dark-color: #381956;
+    --text-color: #333;
   }
-  to {
-    opacity: 1;
-  }
-}
 
+  /* Smooth mobile menu transition */
+  .absolute {
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Optional: Add fade animation for backdrop */
+  .fixed {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
   }
   
-    /* Custom color utility classes */
-    .bg-primary { background-color: var(--primary-color) !important; }
-    .bg-secondary { background-color: var(--secondary-color) !important; }
-    .bg-accent { background-color: var(--accent-color) !important; }
-    .bg-light { background-color: var(--light-color) !important; }
-    .bg-dark { background-color: var(--dark-color) !important; }
-    .bg-white { background-color: var(--white-color) !important; }
-    .text-primary { color: var(--primary-color) !important; }
-    .text-secondary { color: var(--secondary-color) !important; }
-    .text-accent { color: var(--accent-color) !important; }
-    .text-light { color: var(--light-color) !important; }
-    .text-dark { color: var(--dark-color) !important; }
-    .text-main { color: var(--text-color) !important; }
-    .border-primary { border-color: var(--primary-color) !important; }
-    .border-secondary { border-color: var(--secondary-color) !important; }
-    .border-accent { border-color: var(--accent-color) !important; }
-    .border-light { border-color: var(--light-color) !important; }
-    .border-dark { border-color: var(--dark-color) !important; }
-    .hover\:bg-primary:hover { background-color: var(--primary-color) !important; }
-    .hover\:bg-accent:hover { background-color: var(--accent-color) !important; }
-    .hover\:bg-secondary:hover { background-color: var(--secondary-color) !important; }
-    .hover\:bg-light:hover { background-color: var(--light-color) !important; }
-    .hover\:bg-dark:hover { background-color: var(--dark-color) !important; }
-    .hover\:text-primary:hover { color: var(--primary-color) !important; }  
-    .hover\:text-accent:hover { color: var(--accent-color) !important; }
-    .hover\:text-secondary:hover { color: var(--secondary-color) !important; }
-    .hover\:text-light:hover { color: var(--light-color) !important; }
-    .hover\:text-dark:hover { color: var(--dark-color) !important; }
-    .hover\:text-white:hover { color: var(--white-color) !important; }
-  
+  /* Custom color utility classes */
+  .bg-primary { background-color: var(--primary-color) !important; }
+  .bg-secondary { background-color: var(--secondary-color) !important; }
+  .bg-accent { background-color: var(--accent-color) !important; }
+  .bg-light { background-color: var(--light-color) !important; }
+  .bg-dark { background-color: var(--dark-color) !important; }
+  .bg-white { background-color: var(--white-color) !important; }
+  .text-primary { color: var(--primary-color) !important; }
+  .text-secondary { color: var(--secondary-color) !important; }
+  .text-accent { color: var(--accent-color) !important; }
+  .text-light { color: var(--light-color) !important; }
+  .text-dark { color: var(--dark-color) !important; }
+  .text-main { color: var(--text-color) !important; }
+  .border-primary { border-color: var(--primary-color) !important; }
+  .border-secondary { border-color: var(--secondary-color) !important; }
+  .border-accent { border-color: var(--accent-color) !important; }
+  .border-light { border-color: var(--light-color) !important; }
+  .border-dark { border-color: var(--dark-color) !important; }
+  .hover\:bg-primary:hover { background-color: var(--primary-color) !important; }
+  .hover\:bg-accent:hover { background-color: var(--accent-color) !important; }
+  .hover\:bg-secondary:hover { background-color: var(--secondary-color) !important; }
+  .hover\:bg-light:hover { background-color: var(--light-color) !important; }
+  .hover\:bg-dark:hover { background-color: var(--dark-color) !important; }
+  .hover\:text-primary:hover { color: var(--primary-color) !important; }  
+  .hover\:text-accent:hover { color: var(--accent-color) !important; }
+  .hover\:text-secondary:hover { color: var(--secondary-color) !important; }
+  .hover\:text-light:hover { color: var(--light-color) !important; }
+  .hover\:text-dark:hover { color: var(--dark-color) !important; }
+  .hover\:text-white:hover { color: var(--white-color) !important; }
+
   body {
     font-family: 'Roboto', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -77,5 +75,47 @@
   *::before,
   *::after {
     box-sizing: border-box;
+  }
+}
+
+/* Additional animations and utilities outside the base layer */
+@layer utilities {
+  /* WhatsApp button pulse animation */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Floating animation for WhatsApp button */
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  /* Tooltip styles */
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+
+  .pointer-events-none {
+    pointer-events: none;
   }
 }
