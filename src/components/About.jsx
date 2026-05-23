@@ -18,15 +18,10 @@ function About() {
           </h2>
         </div>
 
-
-        {/*<h2 className="mb-12 text-center text-3xl font-bold text-dark sm:text-4xl hover:border-b-4 hover:border-primary hover:pb-2 inline-block transition-all duration-300">
-            About Me
-          </h2>*/}
-
-        {/*<h2 className="mb-12 text-center text-3xl font-bold text-dark sm:text-4xl">About Me</h2>*/}
+        
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div className="overflow-hidden rounded-[10px] shadow-xl shadow-light">
-            {/*<img src={aboutImage} alt="Andrew Chemiati" className="h-full w-full object-cover" />*/}
+            
             <img src="/assets/images/iface.jpg" alt="Andrew Chemiati" className="h-full w-full object-cover" /> 
           </div>
           <div className="space-y-6">

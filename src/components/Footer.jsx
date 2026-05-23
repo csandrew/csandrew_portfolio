@@ -27,10 +27,18 @@ function Footer() {
   ];
 
   const quickLinks = [
-    { text: "Projects", href: "#projects" },
+    { text: "Home", href: "#home" },
     { text: "About", href: "#about" },
-    { text: "Contact", href: "#contact" },
-    { text: "Resume", href: "/resume.pdf" },
+    { text: "Services", href: "#services" },
+    { text: "My Portfolio", href: "#portfolio" },
+  
+    
+  ];
+
+  const legalLinks = [
+    { text: "Terms & Conditions", href: "/terms" },
+    { text: "Privacy Policy", href: "/privacy" },
+    { text: "Cookie Policy", href: "/cookies" },
   ];
 
   useEffect(() => {
@@ -54,61 +62,81 @@ function Footer() {
 
   return (
     <>
-      <footer className="bg-dark py-12 text-center text-light relative">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          {/* Quick Links - subtle addition */}
-          <div className="mb-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm">
-            {quickLinks.map((link) => (
-              <a
-                key={link.text}
-                href={link.href}
-                className="text-gray-400 hover:text-primary transition-colors duration-300"
-              >
-                {link.text}
-              </a>
-            ))}
-          </div>
+      <footer className="bg-dark text-light">
+        {/* Main Footer Content */}
+        <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:py-16">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            
+            {/* Column 1: Brand & Description */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-accent">Andrew Chemiati</h3>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Full-stack developer creating elegant digital solutions with passion and precision. 
+                Let's build something amazing together.
+              </p>
+              {/* Social Links */}
+              <div className="flex gap-3 pt-2">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.href}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.label}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-700 text-light transition duration-300 hover:bg-accent hover:scale-110 hover:text-white"
+                  >
+                    <i className={social.iconClass}></i>
+                  </a>
+                ))}
+              </div>
+            </div>
 
-          {/* Social Links */}
-          <div className="mb-8 flex flex-wrap justify-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.href}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={social.label}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-gray-800 text-light transition duration-300 transform hover:scale-110 hover:bg-primary hover:shadow-lg"
-              >
-                <i className={social.iconClass}></i>
-              </a>
-            ))}
-          </div>
-
-          {/* Copyright with dynamic year */}
-          <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Andrew Chemiati. Crafted with passion for great experiences.
-          </p>
+            {/* Column 2: Quick Links */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-accent">Quick Links</h4>
+              <ul className="space-y-2">
+                {quickLinks.map((link) => (
+                  <li key={link.text}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-gray-300 transition-colors duration-300 hover:text-accent hover:pl-1"
+                    >
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
           
+
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="mt-12 pt-8 border-t border-gray-700">
+            <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row">
+              <p className="text-xs text-gray-400">
+                © {new Date().getFullYear()} Andrew Chemiati. All rights reserved.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 text-xs">
+                {legalLinks.map((link) => (
+                  <a
+                    key={link.text}
+                    href={link.href}
+                    className="text-gray-400 transition-colors duration-300 hover:text-accent"
+                  >
+                    {link.text}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
 
-      {/* Floating WhatsApp Button */}
+      {/* Floating Buttons */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        {/* Scroll to Top Button - appears after scrolling */}
-        {showScrollTop && (
-          <button
-            onClick={scrollToTop}
-            className="group relative h-12 w-12 rounded-full bg-gray-800 text-white shadow-lg transition-all duration-300 hover:bg-primary hover:scale-110"
-            aria-label="Scroll to top"
-          >
-            <i className="fas fa-arrow-up text-sm"></i>
-            <span className="absolute right-full mr-2 top-1/2 -translate-y-1/2 whitespace-nowrap rounded bg-gray-900 px-2 py-1 text-xs opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none">
-              Back to top
-            </span>
-          </button>
-        )}
+        
 
         {/* WhatsApp Button */}
         <button
@@ -117,17 +145,14 @@ function Footer() {
           aria-label="Chat on WhatsApp"
         >
           <i className="fab fa-whatsapp text-2xl"></i>
-          
-          {/* Notification badge */}
           <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 border-2 border-white animate-pulse"></span>
-          
-          {/* Tooltip */}
           <span className="absolute right-full mr-2 top-1/2 -translate-y-1/2 whitespace-nowrap rounded bg-gray-900 px-2 py-1 text-xs opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none">
             Let's chat on WhatsApp!
           </span>
         </button>
       </div>
 
+      {/* Add animation styles */}
       <style jsx>{`
         @keyframes bounce-slow {
           0%, 100% {

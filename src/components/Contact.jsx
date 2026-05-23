@@ -1,28 +1,5 @@
 import { useState } from 'react';
 
-const socialLinks = [
-  /*{
-    href: 'https://github.com/csAndrew',
-    iconClass: 'fab fa-github',
-    label: 'GitHub',
-  },
-  {
-    href: 'https://www.linkedin.com/in/c-s-andrew',
-    iconClass: 'fab fa-linkedin-in',
-    label: 'LinkedIn',
-  },
-  {
-    href: 'https://www.instagram.com/csandrew_ke',
-    iconClass: 'fab fa-instagram',
-    label: 'Instagram',
-  },
-  {
-    href: 'https://twitter.com/yourusername',
-    iconClass: 'fab fa-twitter',
-    label: 'Twitter',
-  },*/
-];
-
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -42,42 +19,42 @@ function Contact() {
   };
 
   const handleSubmit = async (event) => {
-  event.preventDefault();
-  setStatus(null);
-  setLoading(true);
+    event.preventDefault();
+    setStatus(null);
+    setLoading(true);
 
-  try {
-    const encodedData = new URLSearchParams({
-      "form-name": "contact",
-      ...formData,
-    }).toString();
+    try {
+      const encodedData = new URLSearchParams({
+        "form-name": "contact",
+        ...formData,
+      }).toString();
 
-    await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encodedData,
-    });
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodedData,
+      });
 
-    setStatus({
-      type: "success",
-      message: "Message sent successfully!",
-    });
+      setStatus({
+        type: "success",
+        message: "Message sent successfully!",
+      });
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  } catch (error) {
-    setStatus({
-      type: "error",
-      message: "Something went wrong. Try again.",
-    });
-  }
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Something went wrong. Try again.",
+      });
+    }
 
-  setLoading(false);
-};
+    setLoading(false);
+  };
 
   return (
     <section id="contact" className="bg-light py-24">
@@ -87,23 +64,9 @@ function Contact() {
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-dark">Let's Talk About Your Project</h3>
             <p className="text-base leading-8 text-main">
-              I'm currently available for freelance work and open to new opportunities. Feel free to reach out if you have a project in mind or just want to connect.
+              I'm currently available for freelance work and open to new opportunities. Feel free to reach out if you have a project or just want to connect.
             </p>
-            <div className="flex flex-wrap gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.href}
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-[15px] bg-dark text-light transition duration-300 transform hover:scale-110 hover:bg-primary hover:shadow-lg"
-                  /*className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-dark text-white transition hover:bg-primary"*/
-                  aria-label={social.label}
-                >
-                  <i className={social.iconClass}></i>
-                </a>
-              ))}
-            </div>
+            {/* Social links section removed */}
           </div>
           <div className="rounded-[10px] bg-white p-8 shadow-xl">
             <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
