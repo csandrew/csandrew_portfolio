@@ -145,8 +145,8 @@ function Footer() {
           aria-label="Chat on WhatsApp"
         >
           <i className="fab fa-whatsapp text-2xl"></i>
-          <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 border-2 border-white animate-pulse"></span>
-          <span className="absolute right-full mr-2 top-1/2 -translate-y-1/2 whitespace-nowrap rounded bg-gray-900 px-2 py-1 text-xs opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none">
+        
+          <span className="absolute right-full mr-2 top-1/2 -translate-y-1/2 whitespace-nowrap rounded bg-primary px-2 py-1 text-xs opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none">
             Let's chat on WhatsApp!
           </span>
         </button>
