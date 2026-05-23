@@ -15,7 +15,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Portfolio Website',
+    title: 'Decent Humans Website',
     description: 'Organisational website with responsive design and smooth animations.',
     techStack: ['JavaScript', 'Tailwind CSS', 'Python'],
     imageUrl: 'assets/images/decenthumans.png',
