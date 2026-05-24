@@ -5,12 +5,12 @@ import React from 'react';
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
+    title: 'Kindergaten Website',
     description: 'Full-stack e-commerce solution with payment integration and admin dashboard.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    imageUrl: '/images/project1.jpg',
-    liveUrl: 'https://your-live-project.com',
-    githubUrl: 'https://github.com/csAndrew/project-name',
+    techStack: ['JavaScript', 'CSS', 'Python', 'Html'],
+    imageUrl: 'assets/images/esprings.png',
+    liveUrl: 'https://esprings.netlify.app',
+    githubUrl: 'https://github.com/csandrew/e-springs_kindergarten.git',
     category: 'Full Stack',
   },
   {

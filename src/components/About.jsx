@@ -1,10 +1,8 @@
 
-
-
 const skillCategories = [
   { title: 'Frontend', skills: ['JavaScript'] },
-  { title: 'Full-Stack', skills: ['MERN Stack'] },
-  { title: 'Programming', skills: ['Python'] },
+  { title: 'Stack', skills: ['MERN Stack'] },
+  { title: 'Languages', skills: ['Python'] },
 ];
 
 function About() {
