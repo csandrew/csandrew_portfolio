@@ -6,7 +6,7 @@ const projects = [
   {
     id: 1,
     title: 'Kindergaten Website',
-    description: 'Full-stack e-commerce solution with payment integration and admin dashboard.',
+    description: 'A comprehensive kindergarten management platform with online admissions, parent communication, and administrative tools.',
     techStack: ['JavaScript', 'CSS', 'Python', 'Html'],
     imageUrl: 'assets/images/esprings.png',
     liveUrl: 'https://esprings.netlify.app',
