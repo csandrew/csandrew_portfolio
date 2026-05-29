@@ -59,7 +59,7 @@ function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-light shadow-sm backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-7 md:px-8">
         {/* Logo / Name */}
         <div className="text-main">
           <a href="#home" className="text-2xl font-bold text-dark hover:text-primary transition-colors duration-300">

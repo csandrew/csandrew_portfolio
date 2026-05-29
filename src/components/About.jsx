@@ -16,15 +16,16 @@ function About() {
           </h2>
         </div>
 
-        
+
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div className="overflow-hidden rounded-[10px] shadow-xl shadow-light">
-            
-            <img src="/assets/images/iface.jpg" alt="Andrew Chemiati" className="h-full w-full object-cover" /> 
+
+            <img src="/assets/images/iface.jpg" alt="Andrew Chemiati" className="h-full w-full object-cover" />
           </div>
           <div className="space-y-6">
             <p className="text-base leading-8 text-main sm:text-lg">
-              I’m a developer and designer who builds clean, user-focused digital experiences. I enjoy turning ideas into responsive applications, combining thoughtful UI/UX design with modern web development.
+              I specialize in creating modern digital solutions that help businesses establish a strong online presence, improve customer engagement, and achieve sustainable growth. 
+              I combine creativity, technology, and strategy to deliver solutions tailored to different industries and unique business needs.           
             </p>
             <p className="text-base font-semibold text-main">My technical skills include:</p>
             <div className="grid gap-6 sm:grid-cols-3">
@@ -42,7 +43,8 @@ function About() {
               ))}
             </div>
             <p className="text-base leading-8 text-main sm:text-lg">
-              I focus on creating products that are simple, functional, and visually clear, while continuously improving my skills through real-world projects.
+              I am committed to building reliable, user-friendly, and performance-driven platforms that help businesses succeed in today’s digital landscape.
+
             </p>
             <a href="#contact" className="inline-flex rounded-sm bg-secondary px-8 py-3 text-sm font-semibold text-light transition hover:bg-primary">
               Get In Touch

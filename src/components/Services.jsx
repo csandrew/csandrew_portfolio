@@ -32,6 +32,11 @@ function Services() {
         <h2 className="mb-12 text-center text-3xl font-bold text-dark sm:text-4xl hover:border-b-4 hover:border-primary hover:pb-2 transition-all duration-300 inline-block w-auto mx-auto">
           What I Do
         </h2>
+        <p className="text-lg text-main leading-relaxed px-3 py-4 mb-12">
+
+          My services include website design and development, SEO, CRM development, and business-focused digital solutions.  
+          
+        </p>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
             <div 

@@ -31,8 +31,8 @@ function Footer() {
     { text: "About", href: "#about" },
     { text: "Services", href: "#services" },
     { text: "My Portfolio", href: "#portfolio" },
-  
-    
+
+
   ];
 
   const legalLinks = [
@@ -62,20 +62,20 @@ function Footer() {
 
   return (
     <>
-      <footer className="bg-dark text-light">
+      <footer className="bg-dark text-white">
         {/* Main Footer Content */}
         <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:py-16">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+
             {/* Column 1: Brand & Description */}
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-accent">Andrew Chemiati</h3>
               <p className="text-sm text-gray-300 leading-relaxed">
-                Full-stack developer creating elegant digital solutions with passion and precision. 
-                Let's build something amazing together.
+                From web design and development to SEO, CRM systems, and E-Commerce platforms, I offer a full suite of services to elevate your online presence.
+                Reach out today and let's discuss how I can help you achieve your digital goals.
               </p>
               {/* Social Links */}
-              <div className="flex gap-3 pt-2">
+              {/*<div className="flex gap-3 pt-2">
                 {socialLinks.map((social) => (
                   <a
                     key={social.href}
@@ -88,7 +88,7 @@ function Footer() {
                     <i className={social.iconClass}></i>
                   </a>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Column 2: Quick Links */}
@@ -108,8 +108,48 @@ function Footer() {
               </ul>
             </div>
 
-          
 
+            {/* Column 3: Contact Info */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-accent">Contact Me</h4>
+              <p className="text-sm text-gray-300">
+                <strong>Address:</strong> Nairobi, Kenya
+              </p>
+              <p className="text-sm text-gray-300">
+                <strong>Email:</strong> <a href="mailto:andreaschemiati@gmail.com" className="text-accent hover:underline">
+                  andreaschemiati@gmail.com
+                </a>
+              </p>
+              <p className="text-sm text-gray-300">
+                <strong>Phone:</strong> <a href="tel:+254735916581" className="text-accent hover:underline">
+                  +254 735 916 581
+                </a>
+              </p>
+
+
+
+
+              {/* Social Links */}
+              <div className="flex gap-3 pt-2">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.href}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.label}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-700 text-light transition duration-300 hover:bg-accent hover:scale-110 hover:text-white"
+                  >
+                    <i className={social.iconClass}></i>
+                  </a>
+                ))}
+              </div>
+
+
+
+
+
+            </div>
           </div>
 
           {/* Bottom Bar */}
@@ -136,7 +176,7 @@ function Footer() {
 
       {/* Floating Buttons */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        
+
 
         {/* WhatsApp Button */}
         <button
@@ -145,7 +185,7 @@ function Footer() {
           aria-label="Chat on WhatsApp"
         >
           <i className="fab fa-whatsapp text-2xl"></i>
-        
+
           <span className="absolute right-full mr-2 top-1/2 -translate-y-1/2 whitespace-nowrap rounded bg-primary px-2 py-1 text-xs opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none">
             Let's chat on WhatsApp!
           </span>
