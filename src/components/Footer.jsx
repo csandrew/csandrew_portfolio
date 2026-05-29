@@ -24,6 +24,7 @@ function Footer() {
       iconClass: "fab fa-twitter",
       label: "Twitter",
     },
+
   ];
 
   const quickLinks = [
