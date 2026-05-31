@@ -87,23 +87,35 @@ const About = () => {
           <div className="w-24 h-1 bg-accent mx-auto mt-4"></div>
         </div>
 
+        {/* Personal Introduction */}
+
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div className="overflow-hidden rounded-[10px] shadow-xl shadow-light">
             <img src="/assets/images/iface.jpg" alt="Andrew Chemiati" className="h-full w-full object-cover" />
           </div>
-          
-          <div className="space-y-6">
-            <p className="text-base leading-8 text-main sm:text-lg">
-              I specialize in creating modern digital solutions that help businesses establish a strong online presence, 
-              improve customer engagement, and achieve sustainable growth. I combine creativity, technology, and strategy 
-              to deliver solutions tailored to different industries and unique business needs.
+
+          <div className="text-base leading-8 text-main sm:text-lg">
+            <p>Hi, I'm <span className="font-semibold text-primary">Andrew Chemiati</span> - a Full-Stack Developer based in Nairobi, Kenya.
+              My journey into tech comes from the passion to understatnd how software can automate tasks and help businesses get advantage.
+              My stack is MongoDB, Express, React, and Node.js, but I'm always eager to learn new technologies and frameworks that can help me build better solutions.
+              I believe that good code isn't just about functionality; it's about reliability, scalability, and real-world impact.
             </p>
-            
+
             <p className="text-base leading-8 text-main sm:text-lg">
-              I am committed to building reliable, user-friendly, and performance-driven platforms that help businesses 
-              succeed in today's digital landscape.
+              <span className="font-semibold">What drives me:</span>
+
+              Problem-first thinking: I look for workflow inefficiencies and build solutions that eliminate them.
+
+              Growth mindset: I'm always learning.
+
+              User focus: I care about building things people actually enjoy using.
             </p>
-            
+
+            <p className="text-base leading-8 text-main sm:text-lg">
+              <span className="font-semibold">What I'm looking for:</span>
+              Opportunities to grow as a developer, collaborate on meaningful projects, and eventually transition into a full-time Software Engineering role where I can solve real problems at scale.
+            </p>
+
             <a href="#contact" className="inline-flex rounded-sm bg-secondary px-8 py-3 text-sm font-semibold text-white transition hover:bg-primary">
               Get In Touch
             </a>

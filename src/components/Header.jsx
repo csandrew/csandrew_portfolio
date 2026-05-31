@@ -45,15 +45,19 @@ function Header() {
     if (isNavOpen) {
       document.addEventListener('mousedown', handleClickOutside);
       document.addEventListener('keydown', handleEscKey);
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleEscKey);
+      document.body.style.overflow = 'unset';
     }
 
     // Cleanup event listeners
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleEscKey);
+      document.body.style.overflow = 'unset';
     };
   }, [isNavOpen]);
 
@@ -84,42 +88,96 @@ function Header() {
             ref={buttonRef}
             onClick={showNav} 
             aria-label="Toggle menu"
-            className="text-2xl"
+            className="relative w-8 h-8 focus:outline-none"
           >
-            <i className="fas fa-bars"></i>
+            {/* Hamburger Icon - Animated */}
+            <div className="absolute w-6 h-0.5 bg-dark rounded-full transition-all duration-300 ease-in-out"
+                 style={{ 
+                   top: '28%', 
+                   left: '25%',
+                   transform: isNavOpen ? 'rotate(45deg) translate(4px, 4px)' : 'rotate(0deg)'
+                 }} />
+            <div className="absolute w-6 h-0.5 bg-dark rounded-full transition-all duration-300 ease-in-out"
+                 style={{ 
+                   top: '48%', 
+                   left: '25%',
+                   opacity: isNavOpen ? 0 : 1
+                 }} />
+            <div className="absolute w-6 h-0.5 bg-dark rounded-full transition-all duration-300 ease-in-out"
+                 style={{ 
+                   top: '68%', 
+                   left: '25%',
+                   transform: isNavOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'rotate(0deg)'
+                 }} />
           </button>
 
           {isNavOpen && (
             <>
-              {/* Backdrop overlay - clicks here will close the menu */}
+              {/* Backdrop overlay - smoother blur effect */}
               <div 
-                className="fixed inset-0 bg-light-color bg-opacity-50 z-40"
+                className="fixed inset-0 bg-light bg-opacity-50 backdrop-blur-sm z-40 transition-opacity duration-300"
                 onClick={() => setIsNavOpen(false)}
               />
               
-              {/* Mobile Navigation Menu */}
+              {/* Mobile Navigation Menu - Modern design */}
               <div 
                 ref={navRef}
-                className="absolute top-full right-0 mt-2 w-38 rounded-md bg-light shadow-lg z-50"
+                className="absolute top-full right-0 mt-3 w-64 rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-2xl z-50 overflow-hidden animate-slideDown"
               >
-                <ul className="py-2">
-                  {navLinks.map((link) => (
-                    <li key={link.href}>
-                      <a 
-                        href={link.href} 
-                        className="block px-4 py-2 text-sm text-dark transition duration-200 hover:bg-primary hover:text-light"
-                        onClick={() => setIsNavOpen(false)}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
+                <div className="py-3">
+                  {navLinks.map((link, index) => (
+                    <a 
+                      key={link.href}
+                      href={link.href} 
+                      className="block px-6 py-3 text-base font-medium text-dark transition-all duration-200 hover:bg-primary hover:text-light hover:pl-8"
+                      onClick={() => setIsNavOpen(false)}
+                      style={{
+                        animationDelay: `${index * 0.05}s`,
+                        animation: 'fadeIn 0.3s ease-out forwards',
+                        opacity: 0
+                      }}
+                    >
+                      {link.label}
+                    </a>
                   ))}
-                </ul>
+                </div>
+                
+                {/* Decorative bottom line */}
+                <div className="h-1 bg-gradient-to-r from-primary to-secondary"></div>
               </div>
             </>
           )}
         </div>
       </div>
+
+      {/* Add animation styles */}
+      <style jsx>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateX(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out forwards;
+        }
+      `}</style>
     </header>
   );
 }

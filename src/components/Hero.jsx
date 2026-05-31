@@ -1,7 +1,7 @@
 
 function Hero() {
   return (
-    <section id="home" className="relative py-24 text-white overflow-hidden"
+    <section id="home" className="relative py-42 text-white overflow-hidden"
       style={{
         backgroundColor: 'var(--dark-color)',
       }}
@@ -30,10 +30,10 @@ function Hero() {
             I create innovative digital experiences that help brands grow, connect with customers, and thrive in the digital world.
           </p>
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="#portfolio" className="inline-flex items-center justify-center rounded-sm bg-secondary px-8 py-3 text-sm font-semibold text-light transition hover:bg-primary">
+            <a href="#portfolio" className="inline-flex items-center justify-center rounded-sm bg-secondary px-8 py-3 text-sm font-semibold text-white transition hover:bg-primary">
               View My Work
             </a>
-            <a href="#contact" className="inline-flex items-center justify-center rounded-sm border border-accent px-8 py-3 text-sm font-semibold text-light transition hover:bg-primary">
+            <a href="#contact" className="inline-flex items-center justify-center rounded-sm border border-accent px-8 py-3 text-sm font-semibold text-white transition hover:bg-primary">
               Get in Touch
             </a>
           </div>
