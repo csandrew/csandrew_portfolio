@@ -1,59 +1,120 @@
+import { useEffect } from 'react';
 
-const skillCategories = [
-  { title: 'Frontend', skills: ['JavaScript'] },
-  { title: 'Stack', skills: ['MERN Stack'] },
-  { title: 'Languages', skills: ['Python'] },
-];
+const SkillMarquee = () => {
+  const skills = [
+    { name: "React.js", icon: "fab fa-react" },
+    { name: "Next.js", icon: "fab fa-nextjs" },
+    { name: "JavaScript", icon: "fab fa-js" },
+    { name: "TypeScript", icon: "fab fa-typescript" },
+    { name: "Node.js", icon: "fab fa-node" },
+    { name: "Python", icon: "fab fa-python" },
+    { name: "Tailwind CSS", icon: "fab fa-css3-alt" },
+    { name: "HTML5", icon: "fab fa-html5" },
+    { name: "CSS3", icon: "fab fa-css3-alt" },
+    { name: "Git", icon: "fab fa-git-alt" },
+    { name: "MongoDB", icon: "fas fa-database" },
+    { name: "PostgreSQL", icon: "fas fa-database" },
+    { name: "WordPress", icon: "fab fa-wordpress" },
+    { name: "Figma", icon: "fab fa-figma" },
+    { name: "Docker", icon: "fab fa-docker" },
+  ];
 
-function About() {
+  // Triple the array for smooth infinite scroll
+  const scrollingSkills = [...skills, ...skills, ...skills];
+
   return (
-    <section id="about" className="bg-white py-24">
+    <div className="w-full bg-dark py-12 overflow-hidden mt-16">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
+        <div className="text-center mb-10">
+          <h3 className="text-3xl font-bold text-white mb-3">Technologies I Work With</h3>
+          <div className="w-24 h-1 bg-accent mx-auto"></div>
+        </div>
 
+        {/* Marquee Container */}
+        <div className="relative overflow-hidden">
+          <div className="flex marquee-track">
+            {scrollingSkills.map((skill, idx) => (
+              <div
+                key={idx}
+                className="flex-shrink-0 w-36 sm:w-44 mx-4"
+              >
+                {/* FIXED: Solid white background with dark text */}
+                <div className="bg-white rounded-xl p-5 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer">
+                  <i className={`${skill.icon} text-4xl sm:text-5xl text-secondary mb-3`}></i>
+                  <p className="text-dark font-semibold text-sm sm:text-base mt-2">{skill.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Marquee Animation Styles */}
+      <style>
+        {`
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-33.33%);
+            }
+          }
+          
+          .marquee-track {
+            animation: marquee 40s linear infinite;
+            width: max-content;
+          }
+          
+          .marquee-track:hover {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+
+// About Section with Marquee
+const About = () => {
+  return (
+    <section id="about" className="bg-white py-20">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="text-center mb-12">
           <h2 className="inline-block text-center text-3xl font-bold text-dark sm:text-4xl hover:border-b-4 hover:border-primary hover:pb-2 transition-all duration-300">
             About Me
           </h2>
+          <div className="w-24 h-1 bg-accent mx-auto mt-4"></div>
         </div>
-
 
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div className="overflow-hidden rounded-[10px] shadow-xl shadow-light">
-
             <img src="/assets/images/iface.jpg" alt="Andrew Chemiati" className="h-full w-full object-cover" />
           </div>
+          
           <div className="space-y-6">
             <p className="text-base leading-8 text-main sm:text-lg">
-              I specialize in creating modern digital solutions that help businesses establish a strong online presence, improve customer engagement, and achieve sustainable growth. 
-              I combine creativity, technology, and strategy to deliver solutions tailored to different industries and unique business needs.           
+              I specialize in creating modern digital solutions that help businesses establish a strong online presence, 
+              improve customer engagement, and achieve sustainable growth. I combine creativity, technology, and strategy 
+              to deliver solutions tailored to different industries and unique business needs.
             </p>
-            <p className="text-base font-semibold text-main">My technical skills include:</p>
-            <div className="grid gap-6 sm:grid-cols-3">
-              {skillCategories.map((category) => (
-                <div key={category.title} className="rounded-[10px] border border-light bg-white p-5 shadow-sm">
-                  <h3 className="text-lg font-semibold text-dark">{category.title}</h3>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <span key={skill} className="rounded-sm bg-light px-3 py-2 text-sm font-medium text-dark">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+            
             <p className="text-base leading-8 text-main sm:text-lg">
-              I am committed to building reliable, user-friendly, and performance-driven platforms that help businesses succeed in today’s digital landscape.
-
+              I am committed to building reliable, user-friendly, and performance-driven platforms that help businesses 
+              succeed in today's digital landscape.
             </p>
-            <a href="#contact" className="inline-flex rounded-sm bg-secondary px-8 py-3 text-sm font-semibold text-light transition hover:bg-primary">
+            
+            <a href="#contact" className="inline-flex rounded-sm bg-secondary px-8 py-3 text-sm font-semibold text-white transition hover:bg-primary">
               Get In Touch
             </a>
           </div>
         </div>
       </div>
+
+      {/* Full-Width Skill Marquee */}
+      <SkillMarquee />
     </section>
   );
-}
+};
 
 export default About;

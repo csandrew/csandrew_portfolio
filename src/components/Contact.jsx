@@ -1,5 +1,16 @@
 import { useState } from 'react';
 
+// Helper component for contact info items
+const ContactInfo = ({ icon, label, value }) => (
+  <div className="flex items-center gap-3">
+    <i className={`fas fa-${icon} text-primary`}></i>
+    <div>
+      <p className="text-sm text-gray-600">{label}</p>
+      <span className="text-sm text-dark">{value}</span>
+    </div>
+  </div>
+);
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -37,7 +48,7 @@ function Contact() {
 
       setStatus({
         type: "success",
-        message: "Message sent successfully!",
+        message: "Message sent successfully! I'll get back to you soon.",
       });
 
       setFormData({
@@ -49,37 +60,71 @@ function Contact() {
     } catch (error) {
       setStatus({
         type: "error",
-        message: "Something went wrong. Try again.",
+        message: "Something went wrong. Please try again later.",
       });
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
     <section id="contact" className="bg-light py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
-        <h2 className="mb-12 text-center text-3xl font-bold text-dark sm:text-4xl">Get In Touch</h2>
+        <h2 className="mb-12 text-center text-3xl font-bold text-dark sm:text-4xl">
+          Get In Touch
+        </h2>
+        
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          {/* Left Column - Contact Info */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-dark">Let's Talk About Your Project</h3>
+            <h3 className="text-2xl font-semibold text-dark">
+              Let's Talk About Your Project
+            </h3>
             <p className="text-base leading-8 text-main">
-              I'm currently available for freelance work and open to new opportunities. Feel free to reach out if you have a project or just want to connect.
+              I'm currently available for freelance work and open to new opportunities. 
+              Feel free to reach out if you have a project or just want to connect.
             </p>
-            {/* Social links section removed */}
+
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-primary">Contact Me</h4>
+              
+              <ContactInfo icon="location-dot" label="Location" value="Nairobi, Kenya" />
+              <ContactInfo icon="phone" label="Phone" value="+254 735 916 581" />
+              <ContactInfo 
+                icon="envelope" 
+                label="Email" 
+                value={
+                  <a href="mailto:andreaschemiati@gmail.com" className="hover:text-accent">
+                    andreaschemiati@gmail.com
+                  </a>
+                } 
+              />
+            </div>
           </div>
+
+          {/* Right Column - Contact Form */}
           <div className="rounded-[10px] bg-white p-8 shadow-xl">
-            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true" 
+              onSubmit={handleSubmit} 
+              className="space-y-5"
+            >
               <input type="hidden" name="form-name" value="contact" />
+              
               {status && (
                 <p
                   className={`rounded-2xl px-4 py-3 text-sm font-medium ${
-                    status.type === 'success' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'
+                    status.type === 'success' 
+                      ? 'bg-emerald-100 text-emerald-800' 
+                      : 'bg-rose-100 text-rose-800'
                   }`}
                 >
                   {status.message}
                 </p>
               )}
+              
               <div className="grid gap-5 sm:grid-cols-2">
                 <input
                   type="text"
@@ -100,6 +145,7 @@ function Contact() {
                   className="w-full rounded-sm border border-light bg-white px-5 py-4 text-sm text-dark outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
                 />
               </div>
+              
               <input
                 type="text"
                 name="subject"
@@ -109,14 +155,17 @@ function Contact() {
                 required
                 className="w-full rounded-sm border border-light bg-white px-5 py-4 text-sm text-dark outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
               />
+              
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Your Message"
                 required
-                className="h-30 w-full resize-none rounded-sm border border-light bg-white px-5 py-4 text-sm text-dark outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
+                rows={5}
+                className="w-full resize-none rounded-sm border border-light bg-white px-5 py-4 text-sm text-dark outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
               />
+              
               <button
                 type="submit"
                 disabled={loading}
