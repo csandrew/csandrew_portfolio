@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>C.S.Andrew</title>
+    <link rel="canonical" href="https://yourdomain.example/" />
+    <meta name="theme-color" content="#381956" />
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="C.S.Andrew — Portfolio" />
+    <meta property="og:description" content="Andrew Chemiati — Software Engineer, Full-Stack Developer" />
+    <meta property="og:image" content="/assets/images/og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="C.S.Andrew — Portfolio" />
+    <meta name="twitter:description" content="Andrew Chemiati — Software Engineer, Full-Stack Developer" />
+    <meta name="twitter:image" content="/assets/images/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="stylesheet"
@@ -27,6 +38,8 @@
   </head>
 
   <body>
+    <!-- Skip link for keyboard users -->
+    <a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-white text-dark px-3 py-2 rounded-md shadow-md">Skip to content</a>
     <form name="contact" method="POST" data-netlify="true" style="display:none;">
       <input type="hidden" name="form-name" value="contact" />
       <input type="text" name="name" />

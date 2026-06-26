@@ -11,6 +11,7 @@
     --text-color: #333;
   }
 
+
   /* Smooth mobile menu transition */
   .absolute {
     transition: all 0.3s ease-in-out;

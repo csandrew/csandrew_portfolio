@@ -41,9 +41,10 @@ function Projects() {
     <section id="portfolio" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-dark sm:text-4xl inline-block hover:border-b-4 hover:border-primary hover:pb-2 transition-all duration-300">
+          <h2 className="text-3xl font-bold text-dark sm:text-4xl inline-block">
             My Projects
           </h2>
+            <div className="w-24 h-1 bg-accent mx-auto mt-4" aria-hidden="true"></div>
         </div>
         
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -56,8 +57,10 @@ function Projects() {
               <div className="relative h-48 overflow-hidden bg-gray-800">
                 {project.imageUrl ? (
                   <img 
-                    src={project.imageUrl} 
+                    src={project.imageUrl.startsWith('/') ? project.imageUrl : `/${project.imageUrl}`} 
                     alt={project.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                 ) : (
